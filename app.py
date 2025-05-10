@@ -8,7 +8,7 @@ st.set_page_config(page_title="Personalized AI Assistant", page_icon="🤖", lay
 st.markdown("<h1 style='text-align: center;'>💬 Personalized AI Assistant</h1>", unsafe_allow_html=True)
 
 # --- API Key ---
-api_key = "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"  # move this to st.secrets or env in production
+api_key = st.secrets["CHATGROQ_API_KEY"]  # Use secrets or env in production
 
 # --- Session State ---
 if "chat_history" not in st.session_state:
@@ -51,4 +51,4 @@ if user_input:
 
 # --- API Key check ---
 if not api_key:
-    st.warning("sk_ph2C4MVJ8h1KMopE9VCzWGdyb3FYgdVS9FNXT4EXzm5VppVQpXGJ")
+    st.warning("Please enter your ChatGroq API Key to proceed.")
